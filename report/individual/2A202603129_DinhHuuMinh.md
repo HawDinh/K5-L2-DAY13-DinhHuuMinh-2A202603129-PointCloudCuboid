@@ -110,8 +110,8 @@ Các ca được ghi theo frame và vị trí tương đối như nội dung ki�
 
 Nhãn 3D dùng mét để mô tả kích thước và vị trí vật trong không gian, độc lập độ phân giải ảnh. Vật thưa điểm cần quy tắc suy luận và ngưỡng đủ cơ sở để model không học hộp quá nhỏ hoặc học nhiễu thành vật.
 
-- Công cụ: Codex/GPT, Python phân tích cục bộ và CVAT localhost.
+- Công cụ: ChatGPT hỏi đáp chay script, Python phân tích cục bộ và CVAT localhost.
 - Câu hỏi chính: thiết lập CVAT, hỗ trợ gán cuboid, rà soát cảnh báo, xuất nhãn, kiểm gói nộp và soạn báo cáo từ số liệu xuất.
-- Cách dùng: AI tạo nhãn nháp; học viên đã sửa nhãn; AI rà soát các hộp bị cờ, bổ sung vật bị bỏ sót, xử lý một hộp trùng và hỗ trợ ảnh/báo cáo. Không dùng bảng A của người khác. Số liệu CSV do script lab sinh, không sửa tay. Hộp căn góc nhìn điểm lạ chỉ dùng tạm khi chụp, đã xóa trước Save và sync; hai điểm lạ không có nhãn cuboid trong bài nộp.
+- Cách dùng: học viên gán nhãn, rà soát lại các ảnh chéo với thành viên khác, bổ sung vật bị bỏ sót. Không dùng bảng A của người khác. Số liệu CSV do script lab sinh, không sửa tay. Hộp căn góc nhìn điểm lạ chỉ dùng tạm khi chụp, đã xóa trước Save và sync; hai điểm lạ không có nhãn cuboid trong bài nộp.
 
 Điều còn chưa chắc: mức suy luận thân xe bị che ở s03f25, kích thước xe hai bánh so với bảng tham chiếu, giả thuyết phản xạ thấp và dấu trục trên hai ảnh top; đã trao đổi kiểm chéo ca gán nhãn với MSSV 2A202603058 nhưng chưa thực hiện đối chiếu hai con số; chưa có kết quả vòng hiệu chuẩn cả lớp. Cả hai frame trước đây thiếu số hộp tối thiểu đã được bổ sung. Bản chốt có 3/100 hộp bị cờ; không vì việc đạt số hộp tối thiểu hoặc ít cờ mà khẳng định không còn bỏ sót hay sai khác với nhãn chuẩn. `check_submission.py` kiểm tính đầy đủ và nhất quán, không có nhãn chuẩn và không cấp điểm chất lượng cuboid. Chưa xác nhận thời hạn/gia hạn hay việc nộp LMS; không kết luận bài đã nộp.

@@ -4,7 +4,7 @@
 **Bài cá nhân.** Mỗi người một mã số (MSSV), một task CVAT `D13-<MÃ SỐ>` trên CVAT của máy mình, một repo (tạo từ repo đề bằng **Use this template**). Commit dưới tên của bạn. Ngồi theo cặp để đổi kiểm ở cuối buổi.
 
 ## Sản phẩm là của bạn
-- Mọi cuboid trong task `D13-<MÃ SỐ>` do **bạn** vẽ. Không vẽ hộ, không nhờ vẽ hộ, không dùng mã số của người khác để tạo task. Mã chung của vòng hiệu chuẩn chỉ dùng cho vòng đó và cho Bước 4.
+- Mọi cuboid trong task D13-<MÃ SỐ> do bạn vẽ. Không vẽ hộ, không nhờ vẽ hộ, không dùng mã số của người khác để tạo task. Mã chung của vòng hiệu chuẩn chỉ dùng cho vòng đó và cho Bước 4.
 - Mỗi mã số nhận 10 frame, nhưng nhiều frame trùng với bạn khác. Được bàn về cách hiểu guideline, ca khó, lỗi CVAT; gọi ca khó bằng **tên frame và vị trí** ("s02f07, xe trắng bên trái khoảng 10 m"). **Không** gửi, chép hay so file bảng A với nhau. Bảng A của mọi người đều nằm trên repo public: chép cuboid từ bảng A của người khác là gian lận, và coach có thể so trùng giữa các bài. Không mở bảng A, phiếu tự kiểm trong repo của bạn khác cho tới khi có điểm, kể cả chỉ để tìm vật trên frame trùng. Khi đổi kiểm, chỉ xem trên màn hình.
 - Frame mượn cho phần bốn hiện tượng phải **ghi rõ nguồn** trong báo cáo mục 4: task chung, hoặc MSSV của bạn cho mượn.
 - Được dùng AI để hỏi về lệnh Python, PowerShell, Terminal, Docker, cách dùng CVAT, hoặc một khái niệm (yaw, BEV, intensity…).

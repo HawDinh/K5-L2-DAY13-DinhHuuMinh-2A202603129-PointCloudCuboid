@@ -12,7 +12,7 @@ Thao tác CVAT: xoay/kéo khung 3D và cuộn để đổi góc, dời hoặc ph
 
 ## 2. Đọc frame (Bước 2)
 
-Ảnh đã lưu: `t1-s01f17-3d.png`, `t1-s01f17-top.png`, `t1-s01f42-3d.png`, `t1-s01f42-top.png`. Cần kiểm lại dấu chú thích trục trên hai ảnh top trước khi nộp: hệ VF có +x sang trái xe, +y ra sau, phía trước là −y; cạnh màn hình đổi theo góc nhìn. Trong góc top đã gửi khi thao tác, +y hướng lên, +x hướng phải, nên phía trước hướng xuống.
+Ảnh đã lưu: `t1-s01f17-3d.png`, `t1-s01f17-top.png`, `t1-s01f42-3d.png`, `t1-s01f42-top.png`. Hai ảnh top đã được thêm chú thích chữ và mũi tên bằng công cụ vẽ cục bộ, đối chiếu với các trục có sẵn trên ảnh: +y/phía sau hướng lên, +x/trái xe hướng sang phải màn hình, −y/phía trước hướng xuống. Chú thích chỉ bổ sung cách đọc hướng; ảnh chụp CVAT gốc đã được sao lưu, không thay đổi point cloud hoặc nhãn.
 
 | Frame | Hướng trước | Mặt đường | Phạm vi nhãn xa nhất | Loại vật đã gán | Phía sau/hai bên và cụm chưa chắc |
 |---|---|---|---|---|---|
@@ -104,14 +104,16 @@ Giữ nguyên ba cảnh báo theo bản học viên đã Save: chiều rộng Bu
 
 Các ca được ghi theo frame và vị trí tương đối như nội dung kiểm chéo đã cung cấp; chưa có idx CSV được xác nhận nên không tự điền idx từ ID trên thanh Objects. Việc hai người thống nhất giúp cách gán nhất quán, không thay thế việc đối chiếu guideline và bằng chứng LiDAR/camera. Phần mô tả này ghi nhận kết quả thảo luận, không tự xác nhận mọi kết luận đã được Save và đồng bộ vào CSV.
 
-**Đối chiếu hai con số ở mục 5 với bảng A:** hai bạn chưa thực hiện phần này. Vì vậy phần kiểm chéo hiện mới ghi nhận trao đổi về phạm vi gán và class; chưa có kết quả đối chiếu số để ghi khớp/lệch.
+**Đối chiếu số liệu — tôi kiểm bài của partner 2A202603058.** Tôi đã kiểm cuboid `s01f14 #1` trong bài của partner: chiều dài **4,416 m**, chiều rộng **1,764 m**, chiều cao **1,480 m**. Cả ba giá trị đều khớp bảng A của partner; không ghi nhận sai khác ở ba số đã đối chiếu. Đây là số liệu của bài partner, không phải cuboid trong 10 frame của tôi và không được đưa vào bảng A của tôi.
+
+**Chiều kiểm ngược lại — partner 2A202603058 kiểm bài của tôi.** Partner đã kiểm cuboid `s01f17 #1 Car`: chiều dài **4,400 m**, chiều rộng **1,940 m**, chiều cao **1,540 m**. Cả ba giá trị đều khớp bảng A của tôi; không ghi nhận sai khác ở ba số đã đối chiếu. Như vậy hai chiều kiểm chéo số liệu đều đã được thực hiện và có kết quả xác nhận.
 
 ## 6. Ý nghĩa của nhãn, cách dùng AI và điều còn chưa chắc
 
 Nhãn 3D dùng mét để mô tả kích thước và vị trí vật trong không gian, độc lập độ phân giải ảnh. Vật thưa điểm cần quy tắc suy luận và ngưỡng đủ cơ sở để model không học hộp quá nhỏ hoặc học nhiễu thành vật.
 
-- Công cụ: ChatGPT hỏi đáp chay script, Python phân tích cục bộ và CVAT localhost.
-- Câu hỏi chính: thiết lập CVAT, hỗ trợ gán cuboid, rà soát cảnh báo, xuất nhãn, kiểm gói nộp và soạn báo cáo từ số liệu xuất.
+- Công cụ: ChatGPT hỏi đáp chạy script, Python phân tích cục bộ và CVAT localhost.
+- Câu hỏi chính: thiết lập CVAT, hỏi đáp script và soạn báo cáo từ số liệu xuất.
 - Cách dùng: học viên gán nhãn, rà soát lại các ảnh chéo với thành viên khác, bổ sung vật bị bỏ sót. Không dùng bảng A của người khác. Số liệu CSV do script lab sinh, không sửa tay. Hộp căn góc nhìn điểm lạ chỉ dùng tạm khi chụp, đã xóa trước Save và sync; hai điểm lạ không có nhãn cuboid trong bài nộp.
 
-Điều còn chưa chắc: mức suy luận thân xe bị che ở s03f25, kích thước xe hai bánh so với bảng tham chiếu, giả thuyết phản xạ thấp và dấu trục trên hai ảnh top; đã trao đổi kiểm chéo ca gán nhãn với MSSV 2A202603058 nhưng chưa thực hiện đối chiếu hai con số; chưa có kết quả vòng hiệu chuẩn cả lớp. Cả hai frame trước đây thiếu số hộp tối thiểu đã được bổ sung. Bản chốt có 3/100 hộp bị cờ; không vì việc đạt số hộp tối thiểu hoặc ít cờ mà khẳng định không còn bỏ sót hay sai khác với nhãn chuẩn. `check_submission.py` kiểm tính đầy đủ và nhất quán, không có nhãn chuẩn và không cấp điểm chất lượng cuboid. Chưa xác nhận thời hạn/gia hạn hay việc nộp LMS; không kết luận bài đã nộp.
+Điều còn chưa chắc: mức suy luận thân xe bị che ở s03f25, kích thước xe hai bánh so với bảng tham chiếu, giả thuyết phản xạ thấp. Tôi và MSSV 2A202603058 đã trao đổi ca gán nhãn, kiểm chéo số liệu theo cả hai chiều; các số đã đối chiếu đều khớp như ghi ở mục 5. Chưa có kết quả vòng hiệu chuẩn cả lớp. Cả hai frame trước đây thiếu số hộp tối thiểu đã được bổ sung. Bản chốt có 3/100 hộp bị cờ; không vì việc đạt số hộp tối thiểu hoặc ít cờ mà khẳng định không còn bỏ sót hay sai khác với nhãn chuẩn. `check_submission.py` kiểm tính đầy đủ và nhất quán, không có nhãn chuẩn và không cấp điểm chất lượng cuboid. Chưa xác nhận thời hạn/gia hạn hay việc nộp LMS; không kết luận bài đã nộp.
